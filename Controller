@@ -1,0 +1,89 @@
+package dicerollpointsandsum;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Controller {
+
+	public Controller() {
+	}
+
+	// Laver et objekt af klassen Player og sætter en string ind som
+	// argument i constructoren.
+	private Player Player1 = new Player("Player 1");
+	private Player Player2 = new Player("Player 2");
+
+	// Laver en Arrayliste, der kan indeholder referencer til objekter af
+	// Player
+	private List<Player> Players = new ArrayList<Player>();
+
+	public void player() {
+		// Tilføjer spillere til listen Players
+		Players.add(Player1);
+		Players.add(Player2);
+	}
+
+	public void game() {
+		// Laver et nyt objekt af klassen Dice
+		Dice die = new Dice();
+
+		// Reserverer plads til int i og initialiserer til 0.
+		int i = 0;
+
+		// Laver en scanner
+		Scanner scan = new Scanner(System.in);
+
+		// Laver en while løkke, der kører forevigt da while (true).
+		while (true) {
+
+			// Laver et if-statement
+			if (i < Players.size()) {
+
+				// Laver en reference til klassen Player, vi kalder for
+				// tempPlayer. tempPlayer refererer
+				// til index i, i arraylisten Players.
+				Player tempPlayer = Players.get(i);
+
+				// Printer
+				System.out.println("It's " + tempPlayer + "'s turn to roll the dice");
+
+				// Venter på nextLine for at komme videre
+				scan.nextLine();
+
+				// Laver to lokale variable, der indeholder to separate værdier
+				// af die.roll();
+				int roll1 = die.roll();
+				int roll2 = die.roll();
+
+				// Laver en lokal variabel, der er lig roll1 + roll2
+				int diceEyes = roll1 + roll2;
+
+				if (roll1 == roll2) {
+						if (tempPlayer.getSum() >= 40) {
+						System.out.println("Die 1: " + roll1 + "\nDie 2: " + roll2 + "\n" + tempPlayer
+								+ " has rolled a pair and has won the game.");
+						break;
+						}
+				}
+
+				// Opdaterer summen
+				tempPlayer.setSum(roll1 + roll2);
+
+				// Print statement
+				System.out.println("Die 1: " + roll1 + "\nDie 2: " + roll2 + "\n" + tempPlayer + " rolled a total of "
+						+ diceEyes + "\n" + tempPlayer + " now has " + tempPlayer.getSum() + " points\n");
+
+				// Inkrementerer i
+				i++;
+
+				// if-statement, der resetter i når den bliver lig længden af
+				// Players listen.
+				if (i == Players.size()) {
+					i = 0;
+
+				}
+		}
+	}
+	}
+}
