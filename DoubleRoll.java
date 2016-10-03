@@ -10,7 +10,7 @@ public class DoubleRoll
 		this.d1 = d1;
 	}
 	
-	public void resetSum(int d1) 				//Reset method//
+	public void resetSum(int d1) 					//Reset method//
 	{
 		if(d1==1)
 		{
@@ -22,7 +22,7 @@ public class DoubleRoll
 		diceRollChange.roll();
 	}
 	
-	public boolean winConditionDouble6(int d1) 	//Check if Player 1 or 2 rolls a double pair of 6//
+	public boolean winConditionDouble6(int d1) 			//Check if Player 1 or 2 rolls a double pair of 6//
 	{
 		if (d1==6)
 		{
@@ -31,7 +31,7 @@ public class DoubleRoll
 		return false;
 	}
 	
-	public boolean winCondition40plus(int d1) 	//Check if Player 1 or 2 is above 40 points//
+	public boolean winCondition40plus(int d1) 			//Check if Player 1 or 2 is above 40 points//
 	{
 		if (d1>1)
 		{
