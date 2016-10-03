@@ -3,7 +3,7 @@ public class DoubleRoll
 {
 	private int d1;
 	
-	DiceRoll diceRollChange = new DiceRoll();	//Object of type DiceRoll class named DiceRollChange//
+	DiceRoll diceRollChange = new DiceRoll();			//Object of type DiceRoll class named DiceRollChange//
 	
 	public DoubleRoll(int d1) 					//Constructor//
 	{	
