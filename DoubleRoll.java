@@ -1,7 +1,7 @@
 
 public class DoubleRoll 
 {
-	private int d1;
+	private int d1, count = 0;
 	
 	DiceRoll diceRollChange = new DiceRoll();			//Object of type DiceRoll class named DiceRollChange//
 	
@@ -23,11 +23,13 @@ public class DoubleRoll
 	}
 	
 	public boolean winConditionDouble6(int d1) 			//Check if Player 1 or 2 rolls a double pair of 6//
-	{
-		if (d1==6)
+	{	
+		
+		if (d1==6 && count==1)
 		{
 			return true;
 		}
+		count++;
 		return false;
 	}
 	
