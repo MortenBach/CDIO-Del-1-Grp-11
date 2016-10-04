@@ -49,14 +49,15 @@ public class Controller {
 				winDouble40();															// Benytter metoden winDouble40()
 				seksere();
 					if(win) {															// Hvis win er true, stopper den while loopet
-						break;																	
+						break;	
+						
 					}
 					
 			tempPlayer.setSum(roll1 + roll2);											// Opdaterer summen
 			ettere();
 			System.out.println("Die 1: " + roll1 + "\nDie 2: " + roll2 + "\n" 			// Print statement
 					+ tempPlayer + " rolled a total of " + diceEyes + "\n" + tempPlayer 
-					+ " now has " + tempPlayer.getSum() + " points\n");
+					+ " now has " + tempPlayer.getSum() + "	 points\n");
 				
 				i++;																	// Inkrementerer i, hvorved vi nu får fat i den næste spiller i ArrayListen via Players.get(i)
 	
@@ -65,37 +66,38 @@ public class Controller {
 				i = 0;
 			}
 		}
+		scan.close();
 		}
 	
 	
 	// Metoden til vores ene win condition
-	public void winDouble40() {			
+	public void winDouble40() {
 		if (roll1 == roll2) {
 			i--;
 			if (tempPlayer.getSum() >= 40 && roll1 != 1) {
-				System.out.println("Die 1: " + roll1 + "\nDie 2: " + roll2 + "\n" + tempPlayer
-						+ " has rolled a pair and has won the game.");
+				System.out.println("Die 1: " + roll1 + "\nDie 2: " + roll2 + "\n" + tempPlayer + " has won the game.");
 				win = true;
 			}
 		}
 
 	}
-	public void seksere(){
-		if(roll1 == 6 && roll2 == 6){
-			if (checkSixes == true){
-				System.out.println(tempPlayer+" er vinder.");
+
+	public void seksere() {
+		if (roll1 == 6 && roll2 == 6) {
+			if (checkSixes == true) {
+				System.out.println(tempPlayer + " has won the game.");
 				win = true;
-				
-			}else{
+
+			} else {
 				checkSixes = true;
 			}
-		}
-		else{
+		} else {
 			checkSixes = false;
 		}
 	}
-	public void ettere(){
-		if (roll1 == 1 && roll2 == 1){
+
+	public void ettere() {
+		if (roll1 == 1 && roll2 == 1) {
 			tempPlayer.setSum(-tempPlayer.getSum());
 		}
 	}
