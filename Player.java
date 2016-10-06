@@ -1,4 +1,4 @@
-package dicerollpointsandsum;
+package Spil;
 
 public class Player {
 	
