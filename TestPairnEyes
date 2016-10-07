@@ -92,42 +92,46 @@ int numberOfRolls = 100000, result;
 	}
 	int diceOnes, diceTwos, diceThrees, diceFours, diceFives, diceSixes;
 	@Test
-	public void ValueOccour2(){
+	public void PairOccour(){
 		Dice d = new Dice();
 		Dice e = new Dice();
 		for (int i = 1; i < numberOfRolls; i++)	{
-			if(d.roll() == e.roll() && d.roll() == 1){
+			int roll1, roll2;
+			roll1 = d.roll();
+			roll2 = d.roll();
+			if(roll1 == 1 && roll1 == roll2){
 				diceOnes += 1;
 				
 			}
-			else if(d.roll() == e.roll() && d.roll() == 2){
+			else if(roll1 == 2 && roll1 == roll2){
 				diceTwos += 1;
 				
 			}
-			else if(d.roll() == e.roll() && d.roll() == 3){
+			else if(roll1 == 3 && roll1 == roll2){
 				diceThrees += 1;
 				
 			}
-			else if(d.roll() == e.roll() && d.roll() == 4){
+			else if(roll1 == 4 && roll1 == roll2){
 				diceFours += 1;
 				
 			}
-			else if(d.roll() == e.roll() && d.roll() == 5){
+			else if(roll1 == 5 && roll1 == roll2){
 				diceFives += 1;
 				
 			}
-			else if(d.roll() == e.roll() && d.roll() == 6){
+			else if(roll1 == 6 && roll1 == roll2) {
 				diceSixes += 1;
 				
 			}
 			
 		}
 		System.out.print("Pair 1`s: " + diceOnes + "\tPair 2`s: " + diceTwos + "\tPair 3`s: " + diceThrees + "\tPair 4`s: " + diceFours + "\tPair 5`s: " + diceFives + "\tPair 6`s: " + diceSixes+ "\n\n");
-		assertTrue(diceOnes >= (2780-500) && diceOnes <= (2780+500));
-		assertTrue(diceTwos >= (2780-500) && diceTwos <= (2780+500));
-		assertTrue(diceThrees >= (2780-500) && diceThrees <= (2780+500));
-		assertTrue(diceFours >= (2780-500) && diceFours <= (2780+500));
-		assertTrue(diceFives >= (2780-500) && diceFives <= (2780+500));
-		assertTrue(diceSixes >= (2780-500) && diceSixes <= (2780+500));
+		assertTrue(diceOnes >= (2780-400) && diceOnes <= (2780+400));
+		assertTrue(diceTwos >= (2780-400) && diceTwos <= (2780+400));
+		assertTrue(diceThrees >= (2780-400) && diceThrees <= (2780+400));
+		assertTrue(diceFours >= (2780-400) && diceFours <= (2780+400));
+		assertTrue(diceFives >= (2780-400) && diceFives <= (2780+400));
+		assertTrue(diceSixes >= (2780-400) && diceSixes <= (2780+400));
+		
 	}
 }
